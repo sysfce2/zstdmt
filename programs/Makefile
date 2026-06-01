@@ -1,12 +1,12 @@
 ##############################################################################
 # GNU Makefile for zstmt
-# /TR 2024-02-02
+# /TR 2026-06-01
 ##############################################################################
 
 # current versions we're using (tagged in their main repo)
 BRO_VER	= "v1.1.0"
-LIZ_VER	= "v1.0"
-LZ4_VER	= "v1.9.4"
+LIZ_VER	= "v2.1"
+LZ4_VER	= "v1.10.0"
 LZ5_VER	= "v1.5"
 ZSTD_VER= "v1.5.6"
 SNAP_VER= "v0.0.0"
@@ -132,9 +132,11 @@ LIBLIZ	+= $(LIZDIR)/lizard_compress.c \
 	  $(LIZDIR)/lizard_decompress.c \
 	  $(LIZDIR)/lizard_frame.c \
 	  $(LIZDIR)/xxhash/xxhash.c \
+	  $(LIZDIR)/entropy/debug.c \
 	  $(LIZDIR)/entropy/entropy_common.c \
 	  $(LIZDIR)/entropy/fse_compress.c \
 	  $(LIZDIR)/entropy/fse_decompress.c \
+	  $(LIZDIR)/entropy/hist.c \
 	  $(LIZDIR)/entropy/huf_compress.c \
 	  $(LIZDIR)/entropy/huf_decompress.c
 endif # ifndef LIBLIZ

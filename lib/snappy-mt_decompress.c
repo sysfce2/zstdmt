@@ -328,7 +328,6 @@ static void *pt_decompress(void *arg)
 		/* zero should not happen here! */
 		result = pt_read(ctx, in, &wl->frame, &(wl->out.size));
 		if (SNAPPYMT_isError(result)) {
-			list_move(&wl->node, &ctx->writelist_free);
 			goto error_lock;
 		}
 
